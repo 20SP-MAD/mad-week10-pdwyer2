@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:entries="@array/rating_labels"
+        android:entryValues="@array/rating_values"
+        android:key="@string/pref_rating_key"
+        android:title="@string/default_choice" />
+
+    <SwitchPreference
+        android:key="@string/pref_theme_key"
+        android:title="@string/theme_choice"
+
+        />
+
+</PreferenceScreen>
