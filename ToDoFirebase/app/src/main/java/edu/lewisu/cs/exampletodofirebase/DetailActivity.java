@@ -12,7 +12,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -23,6 +30,8 @@ public class DetailActivity extends AppCompatActivity {
     private Button addEditButton;
     private String userId;
     private String ref;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
 
     @Override
@@ -41,14 +50,35 @@ public class DetailActivity extends AppCompatActivity {
 
         addEditButton = findViewById(R.id.add_edit_button);
 
+        userId = getIntent().getStringExtra("uid");
         toDo = new ToDo(userId);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        ref = getIntent().getStringExtra("ref");
 
 
         if (ref != null) {
+            databaseReference = firebaseDatabase.getReference().child("to_do").child(ref);
 
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    toDo = dataSnapshot.getValue(ToDo.class);
+                    setUi();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            };
+
+            databaseReference.addValueEventListener(eventListener);
 
         } else {
             addEditButton.setOnClickListener(new OnAddButtonClick());
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            databaseReference = firebaseDatabase.getReference("to_do");
         }
 
 
@@ -111,7 +141,7 @@ public class DetailActivity extends AppCompatActivity {
     private class OnAddButtonClick implements View.OnClickListener{
         @Override
         public void onClick(View v){
-
+            databaseReference.push().setValue(toDo);
             finish();
         }
     }
@@ -119,7 +149,7 @@ public class DetailActivity extends AppCompatActivity {
     private class OnUpdateButtonClick implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-
+            databaseReference.setValue(toDo);
             finish();
 
         }
@@ -137,7 +167,7 @@ public class DetailActivity extends AppCompatActivity {
         int id=item.getItemId();
         switch(id){
             case R.id.delete:
-
+                databaseReference.removeValue();
                 finish();
             default:
                 return super.onOptionsItemSelected(item);

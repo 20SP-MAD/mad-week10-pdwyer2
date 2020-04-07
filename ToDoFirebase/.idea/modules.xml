@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ToDoFirebase.iml" filepath="$PROJECT_DIR$/ToDoFirebase.iml" group="ToDoFirebase" />
+      <module fileurl="file://$PROJECT_DIR$/app/ToDoFirebase-app.iml" filepath="$PROJECT_DIR$/app/ToDoFirebase-app.iml" group="ToDoFirebase/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="ToDoFirebase/app" />
+      <module fileurl="file://$PROJECT_DIR$/mad-week10-pdwyer2-ToDoFirebase.iml" filepath="$PROJECT_DIR$/mad-week10-pdwyer2-ToDoFirebase.iml" group="ToDoFirebase" />
     </modules>
   </component>
 </project>

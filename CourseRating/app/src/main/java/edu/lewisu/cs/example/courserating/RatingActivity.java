@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class RatingActivity extends AppCompatActivity {
 
     private final String TAG = RatingActivity.class.getSimpleName();
@@ -22,6 +25,8 @@ public class RatingActivity extends AppCompatActivity {
     private Spinner courseTypeSpinner;
     private RatingBar ratingBar;
     private Button submitButton;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
 
     @Override
@@ -29,6 +34,9 @@ public class RatingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(Settings.DEFAULT_THEME);
         setContentView(R.layout.activity_rating);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference().child("course_rating");
+
         courseRating = new CourseRating();
 
         courseNameEditText = findViewById(R.id.courseNameEditText);
@@ -111,12 +119,11 @@ public class RatingActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            String courseName = courseRating.getCourseName();
-            int rating = courseRating.getRating();
+            databaseReference.push().setValue(courseRating);
 
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("courseName", courseName);
-            returnIntent.putExtra("rating", rating);
+            returnIntent.putExtra("courseName", courseRating.getCourseName());
+            returnIntent.putExtra("rating", courseRating.getRating());
             setResult(RESULT_OK, returnIntent);
             finish();
 

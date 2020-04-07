@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CourseRating.iml" filepath="$PROJECT_DIR$/CourseRating.iml" group="CourseRating" />
+      <module fileurl="file://$PROJECT_DIR$/app/CourseRating-app.iml" filepath="$PROJECT_DIR$/app/CourseRating-app.iml" group="CourseRating/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CourseRating/app" />
+      <module fileurl="file://$PROJECT_DIR$/mad-week10-pdwyer2-CourseRating.iml" filepath="$PROJECT_DIR$/mad-week10-pdwyer2-CourseRating.iml" group="CourseRating" />
     </modules>
   </component>
 </project>
