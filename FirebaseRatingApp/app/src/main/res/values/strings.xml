@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Preferences Assignment</string>
+    <string name="game_rating">Game Rating</string>
+    <string name="game_name">Game Name</string>
+    <string name="producer_name">Producer Name</string>
+    <string name="submit_rating">Submit Rating</string>
+    <string name="multiplayer_compatible">Multiplayer Compatible</string>
+    <string-array name="game_genre">
+        <item>Select a game genre...</item>
+        <item>First Person Shooter</item>
+        <item>Action/Adventure</item>
+        <item>Role-Playing</item>
+        <item>Racing</item>
+    </string-array>
+    <string name="Welcome">Video Game Rating App</string>
+    <string name="add_a_review">Add a review</string>
+
+    <plurals name="star_rating">
+        <item quantity="zero">Rating: %d stars</item>4
+        <item quantity="one">Rating: %d star</item>
+        <item quantity="other">Rating: %d stars</item>
+    </plurals>
+
+    <string name="settings">Settings</string>
+    <!-- Titles for preferences -->
+    <string name="default_choice">Select the default rating</string>
+    <string name="theme_choice">Dark Theme</string>
+
+    <!-- Key name for rating preference in SharedPreferences -->
+    <string name="pref_rating_key" translatable="false">rating</string>
+    <string name="pref_theme_key" translatable="false">dark</string>
+
+
+    <!-- Labels and values for preference list -->
+    <string-array name="rating_labels">
+        <item>One Star</item>
+        <item>Two Stars</item>
+        <item>Three Stars</item>
+        <item>Four Stars</item>
+        <item>Five Stars</item>
+    </string-array>
+
+    <string-array name="rating_values">
+        <item>"1</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+    </string-array>
+</resources>

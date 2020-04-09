@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/gameNameTextView"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="Game name"
+        />
+
+    <TextView
+        android:id="@+id/gameProducerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="Game producer"
+        />
+
+    <TextView
+        android:id="@+id/gameTypeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="Game type"
+        />
+
+    <TextView
+        android:id="@+id/gameMultiplayerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="Multiplayer T/F"
+        />
+
+    <TextView
+        android:id="@+id/gameRatingTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="5 stars"
+        />
+
+</LinearLayout>
